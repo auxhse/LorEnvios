@@ -297,3 +297,14 @@ svg.sim-on .route:not(.sim-route){opacity:.12}
 .map-grid{align-items:start}
 .route.sim-route{stroke:var(--accent);stroke-width:5;opacity:1}
 svg.sim-on .truck:not(#sim-truck){display:none}
+/* ===== Camión y crédito ===== */
+.track{transition:left .3s ease-out}
+.steps li::before{transition:background .3s,color .3s,transform .3s}
+.steps li.on::before{background:var(--accent);color:#0A1F5C;transform:scale(1.15)}
+footer .credit{flex-basis:100%;font-size:.85rem;opacity:.8}
+@media(prefers-reduced-motion:reduce){.track,.steps li::before{transition:none}}
+/* ===== Pie de página ===== */
+footer{padding:1.5rem 0 5rem}
+footer .wrap{display:grid;grid-template-columns:1fr;justify-items:center;gap:.5rem;text-align:center}
+footer .credit{font-size:1.05rem;font-weight:600;opacity:1}
+footer .rights{max-width:none}
