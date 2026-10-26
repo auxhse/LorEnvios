@@ -14,12 +14,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="estilos.css">
 <style>
-/* Pie de página */
+/* Pie de página: reglas propias para que no dependan de estilos.css */
 footer{padding:1.5rem 0 5rem}
-footer .wrap{display:grid;grid-template-columns:1fr;align-items:center;gap:.5rem;text-align:center}
-footer .credit{font-size:1.05rem;font-weight:600;opacity:1}
-footer .rights{max-width:none;text-align:center}
-footer .nit{text-align:center}
+footer .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem 1.5rem}
+footer .credit{white-space:nowrap;font-size:1.05rem;font-weight:600;opacity:1;text-align:left;flex-basis:auto}
+footer .rights{max-width:260px;text-align:center}
+footer .nit{text-align:right}
+@media(max-width:1000px){footer .wrap{grid-template-columns:1fr;gap:.5rem}footer .rights{max-width:none;text-align:left}footer .nit{text-align:left}footer .credit{white-space:normal}}
 .wa-float{transition:opacity .2s}
 .wa-float.oculto{opacity:0;pointer-events:none}
 </style>
@@ -50,7 +51,7 @@ footer .nit{text-align:center}
         <a class="btn ghost" href="servicios.html">Ver servicios</a>
       </div>
       <ul class="pills" aria-label="Ciudades de operación">
-        <li>Villavicencio</li><li>Bogotá</li><li>Pereira</li><li>Yopal</li><li>Barranquilla</li><li>Sincelejo</li>
+        <li><a href="operaciones.html#villavicencio">Villavicencio</a></li><li><a href="operaciones.html#bogota">Bogotá</a></li><li><a href="operaciones.html#pereira">Pereira</a></li><li><a href="operaciones.html#yopal">Yopal</a></li><li><a href="operaciones.html#barranquilla">Barranquilla</a></li><li><a href="operaciones.html#sincelejo">Sincelejo</a></li>
       </ul>
     </div>
     <div class="road" aria-hidden="true">
@@ -108,6 +109,10 @@ footer .nit{text-align:center}
       <div class="head"><h2>Empresas que confían en nosotros</h2></div>
       <ul class="clients">
         <li>Alkosto</li><li>Challenger</li><li>ALDIA <small>Logistica</small></li>
+      </ul>
+      <p class="more-clients">También hemos trabajado con</p>
+      <ul class="clients clients-sm">
+        <li>Falabella</li><li>Corona</li><li>Colsubsidio</li><li>EXXE <small>Logistica</small></li>
       </ul>
     </div>
   </section>

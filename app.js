@@ -1,5 +1,5 @@
 /* ====== CONFIGURACIÓN DE WHATSAPP (solo cambie estas dos líneas) ====== */
-const WA_NUMBER = "573144157101"; /* 57 + celular de 10 dígitos, sin +, sin espacios */
+const WA_NUMBER = "573184936998"; /* 57 + celular de 10 dígitos, sin +, sin espacios */
 const WA_MENSAJE = "Hola, quiero cotizar un transporte de carga con LOR ENVIOS S.A.S.";
 /* ====================================================================== */
 (function () {
@@ -121,15 +121,35 @@ const WA_MENSAJE = "Hola, quiero cotizar un transporte de carga con LOR ENVIOS S
 (function () {
   var w = document.querySelector(".steps-wrap");
   if (!w) return;
+  var pasos = w.querySelectorAll(".steps li");
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches, espera = false;
+  var valor = 0, lanzado = false;
+  var intro = function () {
+    if (!lanzado) {
+      lanzado = true;
+      var t0 = performance.now();
+      (function f(t) { valor = Math.min(1, (t - t0) / 2400); poner(); if (valor < 1) requestAnimationFrame(f); })(t0);
+    }
+    return valor;
+  };
   var poner = function () {
-    var r = w.getBoundingClientRect(), vh = window.innerHeight;
-    var p = reduce ? 1 : Math.min(1, Math.max(0, (vh * 0.8 - r.top) / (vh * 0.5)));
+    var r = w.getBoundingClientRect(), vh = window.innerHeight, y = window.scrollY;
+    var top = r.top + y, bottom = r.bottom + y;
+    var max = document.documentElement.scrollHeight - vh;
+    var ini = top - vh * 0.9;
+    var fin = Math.min(bottom - vh * 0.55, max - 2);
+    var p;
+    if (reduce) p = 1;
+    else if (fin <= ini) p = r.top < vh ? intro() : 0;
+    else p = Math.min(1, Math.max(0, (y - ini) / (fin - ini)));
+    if (!reduce && p >= 1 && y < 5 && r.top < vh) p = intro();
     w.style.setProperty("--p", p.toFixed(3));
+    pasos.forEach(function (li, i) { li.classList.toggle("on", p >= i / 3 - 0.02); });
   };
   var tick = function () { if (!espera) { espera = true; requestAnimationFrame(function () { espera = false; poner(); }); } };
   window.addEventListener("scroll", tick, { passive: true });
   window.addEventListener("resize", tick);
+  window.addEventListener("load", poner);
   poner();
 })();
 
@@ -139,12 +159,20 @@ const WA_MENSAJE = "Hola, quiero cotizar un transporte de carga con LOR ENVIOS S
   if (!svg) return;
   var CIU = { villavicencio: "Villavicencio", bogota: "Bogotá", pereira: "Pereira", yopal: "Yopal", barranquilla: "Barranquilla", sincelejo: "Sincelejo" };
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var EXTRA = { arauca: "Arauca", neiva: "Neiva", ibague: "Ibagué" }, EXTRA_K = Object.keys(EXTRA);
   var pos = {};
   svg.querySelectorAll(".node").forEach(function (n) {
     var c = n.querySelector("circle.dot"); pos[n.getAttribute("data-city")] = [+c.getAttribute("cx"), +c.getAttribute("cy")];
   });
   var wa = function (txt) { return /^\d{11,15}$/.test(WA_NUMBER) ? "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(txt) : "contacto.html"; };
   var abrir = function (a, url) { a.href = url; a.target = "_blank"; a.rel = "noopener"; };
+
+  /* Llegar desde el inicio con una ciudad: operaciones.html#bogota */
+  var hc = (location.hash || "").slice(1);
+  if (CIU[hc]) {
+    var nh = svg.querySelector('.node[data-city="' + hc + '"]');
+    if (nh) { nh.dispatchEvent(new Event("click")); var rr = document.getElementById("rutas"); if (rr) rr.scrollIntoView(); }
+  }
 
   /* ¿Operamos en tu ciudad? */
   var chk = document.getElementById("chk"), cm = document.getElementById("chk-msg"), cw = document.getElementById("chk-wa");
@@ -156,6 +184,10 @@ const WA_MENSAJE = "Hola, quiero cotizar un transporte de carga con LOR ENVIOS S
     if (m.length === 1 && v.length >= 2) {
       cm.textContent = "Sí, operamos en " + CIU[m[0]] + ".";
       var n = svg.querySelector('.node[data-city="' + m[0] + '"]'); if (n) n.dispatchEvent(new Event("click"));
+    } else if (!m.length && v.length >= 2 && EXTRA_K.filter(function (k) { return k.indexOf(v) === 0; }).length === 1) {
+      var ek = EXTRA_K.filter(function (k) { return k.indexOf(v) === 0; })[0];
+      cm.textContent = "También hemos trabajado en " + EXTRA[ek] + ". Escríbenos para cotizar.";
+      cw.hidden = false; abrir(cw, wa("Hola, quisiera cotizar un transporte de carga en " + EXTRA[ek] + " con LOR ENVIOS S.A.S."));
     } else if (!m.length && v.length >= 4) {
       cm.textContent = "Esa ciudad no está en nuestro mapa. Escríbenos y lo revisamos.";
       cw.hidden = false; abrir(cw, wa("Hola, quisiera saber si pueden transportar carga en " + chk.value.trim() + " con LOR ENVIOS S.A.S."));

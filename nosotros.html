@@ -14,12 +14,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="estilos.css">
 <style>
-/* Pie de página */
+/* Pie de página: reglas propias para que no dependan de estilos.css */
 footer{padding:1.5rem 0 5rem}
-footer .wrap{display:grid;grid-template-columns:1fr;align-items:center;gap:.5rem;text-align:center}
-footer .credit{font-size:1.05rem;font-weight:600;opacity:1}
-footer .rights{max-width:none;text-align:center}
-footer .nit{text-align:center}
+footer .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem 1.5rem}
+footer .credit{white-space:nowrap;font-size:1.05rem;font-weight:600;opacity:1;text-align:left;flex-basis:auto}
+footer .rights{max-width:260px;text-align:center}
+footer .nit{text-align:right}
+@media(max-width:1000px){footer .wrap{grid-template-columns:1fr;gap:.5rem}footer .rights{max-width:none;text-align:left}footer .nit{text-align:left}footer .credit{white-space:normal}}
 .wa-float{transition:opacity .2s}
 .wa-float.oculto{opacity:0;pointer-events:none}
 </style>
@@ -67,10 +68,14 @@ footer .nit{text-align:center}
       </div>
       <!-- FOTOS: para agregar otra foto, copie un bloque <figure> completo y cambie el nombre del archivo y el texto -->
       <!-- FOTOS: para agregar otra foto, copie un bloque <figure> completo y cambie el nombre del archivo y el texto -->
+      <!-- FOTOS: para agregar otra foto, copie un bloque <figure> completo y cambie el nombre del archivo y el texto -->
       <div class="photos">
-        <figure><img src="foto1.jpg" alt="Camión Foton Aumark con furgón cerrado de LOR ENVIOS" loading="lazy"><figcaption>Nuestros vehículos</figcaption></figure>
-        <figure><img src="foto2.jpg" alt="Interior del furgón de carga" loading="lazy"><figcaption>Interior del furgón</figcaption></figure>
-        <figure><img src="foto3.jpg" alt="Dos candados de seguridad para las puertas del furgón" loading="lazy"><figcaption>Candados de seguridad para tu carga</figcaption></figure>
+        <figure><img src="flota-1.jpg" alt="Camiones blancos con furgón de aluminio estacionados en fila" style="aspect-ratio:4/3" loading="lazy"></figure>
+        <figure><img src="flota-2.jpg" alt="Fila de camiones vistos de lado, con sus placas" style="aspect-ratio:4/3" loading="lazy"></figure>
+        <figure><img src="flota-3.jpg" alt="Camiones de frente en el patio" style="aspect-ratio:4/3" loading="lazy"></figure>
+        <figure><img src="flota-4.jpg" alt="Camiones con furgón de aluminio bajo un cielo azul" style="aspect-ratio:4/3" loading="lazy"></figure>
+        <figure><img src="flota-5.jpg" alt="Camiones con furgón de aluminio estacionados en la vía" style="aspect-ratio:4/3" loading="lazy"></figure>
+        <figure><img src="flota-6.jpg" alt="Camión blanco con furgón de aluminio frente a una casa de campo" style="aspect-ratio:4/3" loading="lazy"></figure>
       </div>
     </div>
   </section>
