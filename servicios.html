@@ -16,10 +16,11 @@
 <style>
 /* Pie de página */
 footer{padding:1.5rem 0 5rem}
-footer .wrap{display:grid;grid-template-columns:1fr;align-items:center;gap:.5rem;text-align:center}
-footer .credit{font-size:1.05rem;font-weight:600;opacity:1}
-footer .rights{max-width:none;text-align:center}
-footer .nit{text-align:center}
+footer .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem 1.5rem}
+footer .credit{white-space:nowrap;font-size:1.05rem;font-weight:600;opacity:1;text-align:left;flex-basis:auto}
+footer .rights{max-width:260px;text-align:center}
+footer .nit{text-align:right}
+@media(max-width:1000px){footer .wrap{grid-template-columns:1fr;gap:.5rem}footer .rights{max-width:none;text-align:left}footer .nit{text-align:left}footer .credit{white-space:normal}}
 .wa-float{transition:opacity .2s}
 .wa-float.oculto{opacity:0;pointer-events:none}
 </style>
