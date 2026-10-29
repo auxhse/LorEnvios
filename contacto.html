@@ -16,10 +16,10 @@
 <style>
 /* Pie de página: reglas propias para que no dependan de estilos.css */
 footer{padding:1.5rem 0 5rem}
-footer .wrap{display:grid;grid-template-columns:1fr;align-items:center;gap:.5rem;text-align:center}
-footer .credit{font-size:1.05rem;font-weight:600;opacity:1;text-align:center}
-footer .rights{max-width:none;text-align:center}
-footer .nit{text-align:center}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.5rem 1.5rem;text-align:center}
+footer .credit{flex-basis:100%;white-space:normal;font-size:1.05rem;font-weight:600;opacity:1;text-align:center}
+footer .rights{flex-basis:100%;max-width:none;text-align:center}
+footer .nit{flex-basis:100%;text-align:center}
 .wa-float{transition:opacity .2s}
 .wa-float.oculto{opacity:0;pointer-events:none}
 </style>
@@ -58,8 +58,7 @@ footer .nit{text-align:center}
         </div>
       </div>
       <dl>
-        <div><dt>Teléfono</dt><dd><a href="tel:+576086615306">(608) 661 5306</a></dd></div>
-        <div><dt>WhatsApp</dt><dd><a data-wa data-wa-text href="contacto.html">+57 318 493 6998</a><br><a href="https://wa.me/573115339727" target="_blank" rel="noopener">+57 311 533 9727</a></dd></div>
+        <div><dt>WhatsApp</dt><dd><a data-wa data-wa-text href="contacto.html">+57 318 493 6998</a><br><a href="https://wa.me/573184936998" target="_blank" rel="noopener">+57 318 493 6998</a></dd></div>
         <div><dt>Correo</dt><dd><a href="mailto:directoraadmon.lorenvios@gmail.com">directoraadmon.lorenvios@gmail.com</a></dd></div>
         <div><dt>Sede y bodega</dt><dd>Calle 24B No. 23-74, barrio San Marcos<br>Villavicencio, Meta<br><a href="https://www.google.com/maps/search/?api=1&query=Calle+24B+23-74+San+Marcos+Villavicencio+Meta+Colombia" target="_blank" rel="noopener">Ver en Google Maps</a></dd></div>
         <!-- Cuando tenga el horario, quite las marcas de comentario de la línea siguiente:
