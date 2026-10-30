@@ -1,5 +1,5 @@
 /* ====== CONFIGURACIÓN DE WHATSAPP (solo cambie estas dos líneas) ====== */
-const WA_NUMBER = "573144157101"; /* 57 + celular de 10 dígitos, sin +, sin espacios */
+const WA_NUMBER = "573115339727"; /* 57 + celular de 10 dígitos, sin +, sin espacios */
 const WA_MENSAJE = "Hola, quiero cotizar un transporte de carga con LOR ENVIOS S.A.S.";
 /* ====================================================================== */
 (function () {
