@@ -167,7 +167,14 @@ footer{background:#0A1F5C}
 body.p-nosotros .page-hero{background:var(--stripes),radial-gradient(800px 300px at 90% 0,rgba(255,255,255,.15),transparent 60%),linear-gradient(160deg,#1034A6 25%,#071A5E)}
 body.p-servicios .page-hero{background:var(--stripes),radial-gradient(800px 320px at 12% 120%,rgba(255,255,255,.22),transparent 60%),linear-gradient(160deg,#1034A6 30%,#2E7BEF)}
 body.p-operaciones .page-hero{background:var(--stripes),radial-gradient(800px 300px at 90% 0,rgba(255,255,255,.18),transparent 60%),linear-gradient(160deg,#1034A6 30%,#0F7C9A)}
+body.p-sst .page-hero{background:var(--stripes),radial-gradient(800px 300px at 85% 0,rgba(255,255,255,.18),transparent 60%),linear-gradient(160deg,#1034A6 35%,#0B3A8F)}
 .s-tint{background:var(--surface)}
+.sst-link-section{padding:3rem 0 5rem}
+.sst-link-card{max-width:760px;margin:0 auto;padding:clamp(1.5rem,5vw,3rem);text-align:center;background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 32px rgba(16,52,166,.08)}
+.sst-link-card h2{margin-top:1rem}
+.sst-link-card p{max-width:56ch;margin:1rem auto 1.5rem;color:var(--muted)}
+.tag{display:inline-flex;align-self:flex-start;padding:.3rem .7rem;border-radius:999px;background:#0F7C9A;color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+
 .s-gray,#proceso{background:var(--alt)}
 .s-navy{background:var(--stripes),linear-gradient(160deg,#0A1F5C,#102A7A);color:#fff}
 .s-navy .head p{color:rgba(255,255,255,.85)}
