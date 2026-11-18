@@ -22,6 +22,10 @@ footer .rights{flex-basis:100%;max-width:none;text-align:center}
 footer .nit{flex-basis:100%;text-align:center}
 .wa-float{transition:opacity .2s}
 .wa-float.oculto{opacity:0;pointer-events:none}
+.home-flota{position:relative;display:grid;align-items:center;min-height:clamp(300px,42vw,500px);padding:clamp(4rem,9vw,7rem) 0;color:#fff;background:linear-gradient(90deg,rgba(7,26,94,.88),rgba(7,26,94,.52)),url("flota-2.jpg") center 48%/cover no-repeat}
+.home-flota .head{margin:0;max-width:680px}
+.home-flota .head p{max-width:42ch;color:rgba(255,255,255,.9)}
+@media(max-width:620px){.home-flota{min-height:340px;background-position:42% center}.home-flota .head{max-width:34ch}}
 </style>
 </head>
 <body class="p-inicio">
@@ -101,6 +105,15 @@ footer .nit{flex-basis:100%;text-align:center}
         <li><a href="servicios.html"><svg class="ico ico-wh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M3 21V9l9-6 9 6v12"/><path pathLength="1" d="M7 21v-8h10v8M7 17h10"/></svg><b>Despacho y distribución</b><span>→</span></a></li>
         <li><a href="servicios.html"><svg class="ico ico-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M12 21s-6-5.2-6-10a6 6 0 1112 0c0 4.8-6 10-6 10z"/><circle pathLength="1" cx="12" cy="11" r="2.2"/></svg><b>Cobertura regional y nacional</b><span>→</span></a></li>
       </ul>
+    </div>
+  </section>
+
+  <section class="flota home-flota">
+    <div class="wrap">
+      <div class="head">
+        <h2>Tu carga, en buenas manos</h2>
+        <p>Una flota preparada para acompañar cada recorrido, con compromiso y seguridad.</p>
+      </div>
     </div>
   </section>
 
