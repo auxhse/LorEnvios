@@ -22,10 +22,21 @@ footer .rights{flex-basis:100%;max-width:none;text-align:center}
 footer .nit{flex-basis:100%;text-align:center}
 .wa-float{transition:opacity .2s}
 .wa-float.oculto{opacity:0;pointer-events:none}
-.home-flota{position:relative;display:grid;align-items:center;min-height:clamp(300px,42vw,500px);padding:clamp(4rem,9vw,7rem) 0;color:#fff;background:linear-gradient(90deg,rgba(7,26,94,.88),rgba(7,26,94,.52)),url("flota-2.jpg") center 48%/cover no-repeat}
-.home-flota .head{margin:0;max-width:680px}
-.home-flota .head p{max-width:42ch;color:rgba(255,255,255,.9)}
-@media(max-width:620px){.home-flota{min-height:340px;background-position:42% center}.home-flota .head{max-width:34ch}}
+.p-inicio .hero{min-height:clamp(560px,calc(100svh - 88px),760px);display:flex;flex-direction:column;justify-content:center;padding:clamp(4rem,8vw,7rem) 0 2rem;background:linear-gradient(90deg,rgba(7,26,94,.94) 0%,rgba(7,26,94,.82) 48%,rgba(7,26,94,.24) 100%),url("flota-2.jpg") center 48%/cover no-repeat}
+.p-inicio .hero .wrap{width:100%}
+.p-inicio .hero h1{max-width:13ch}
+.hero-label{display:inline-block;margin-bottom:1rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.p-inicio .road{display:none}
+@media(max-width:620px){.p-inicio .hero{min-height:620px;background-position:42% center;background-image:linear-gradient(90deg,rgba(7,26,94,.88),rgba(7,26,94,.62)),url("flota-2.jpg")}.p-inicio .hero h1{max-width:16ch}}
+.home-clients .head{max-width:none;margin:0 auto 2rem;text-align:center}
+.home-clients .client-names{display:grid;align-items:center;gap:.5rem 0;margin:0;padding:0;border:0;list-style:none;text-align:center}
+.home-clients .client-names-primary{grid-template-columns:repeat(3,minmax(0,1fr))}
+.home-clients .client-names-secondary{grid-template-columns:repeat(4,minmax(0,1fr))}
+.home-clients .client-names li{padding:.4rem clamp(.5rem,2vw,1.6rem);color:var(--muted);font:600 clamp(1.15rem,2.5vw,1.65rem)/1.2 var(--head);text-align:center}
+.home-clients .client-names li+li{border-left:1px solid var(--line)}
+.home-clients .client-names-primary li{color:var(--blue);font:800 clamp(2rem,5vw,4rem)/1 var(--head);letter-spacing:.015em}
+.home-clients .more-clients{margin:2.5rem 0 1rem;color:var(--muted);font-weight:600;text-align:center}
+@media(max-width:620px){.home-clients .client-names-primary,.home-clients .client-names-secondary{grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem 0}.home-clients .client-names li+li{border-left:0}.home-clients .client-names-primary li:last-child{grid-column:1/-1}}
 </style>
 </head>
 <body class="p-inicio">
@@ -48,6 +59,7 @@ footer .nit{flex-basis:100%;text-align:center}
 <main id="inicio">
   <div class="hero">
     <div class="wrap">
+      <span class="hero-label">Desde Villavicencio para Colombia</span>
       <h1>Tu carga llega a todo el país.</h1>
       <p class="lead">Transporte de carga por carretera a nivel regional y nacional.</p>
       <div class="cta">
@@ -108,24 +120,15 @@ footer .nit{flex-basis:100%;text-align:center}
     </div>
   </section>
 
-  <section class="flota home-flota">
-    <div class="wrap">
-      <div class="head">
-        <h2>Tu carga, en buenas manos</h2>
-        <p>Una flota preparada para acompañar cada recorrido, con compromiso y seguridad.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="clientes" class="s-gray">
+  <section id="clientes" class="s-gray home-clients">
     <div class="wrap">
       <div class="head"><h2>Empresas que confían en nosotros</h2></div>
-      <ul class="clients">
-        <li>Alkosto</li><li>Challenger</li><li>ALDIA <small>Logistica</small></li>
+      <ul class="clients client-names client-names-primary" aria-label="Empresas que confían en LOR ENVIOS">
+        <li>ALKOSTO</li><li>CHALLENGER</li><li>ALDIA LOGÍSTICA</li>
       </ul>
       <p class="more-clients">También hemos trabajado con</p>
-      <ul class="clients clients-sm">
-        <li>Falabella</li><li>Corona</li><li>Colsubsidio</li><li>EXXE <small>Logistica</small></li>
+      <ul class="clients client-names client-names-secondary" aria-label="Otras empresas con las que hemos trabajado">
+        <li>Falabella</li><li>Corona</li><li>Colsubsidio</li><li>EXXE Logística</li>
       </ul>
     </div>
   </section>
