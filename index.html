@@ -37,6 +37,15 @@ footer .nit{flex-basis:100%;text-align:center}
 .home-clients .client-names-primary li{color:var(--blue);font:800 clamp(2rem,5vw,4rem)/1 var(--head);letter-spacing:.015em}
 .home-clients .more-clients{margin:2.5rem 0 1rem;color:var(--muted);font-weight:600;text-align:center}
 @media(max-width:620px){.home-clients .client-names-primary,.home-clients .client-names-secondary{grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem 0}.home-clients .client-names li+li{border-left:0}.home-clients .client-names-primary li:last-child{grid-column:1/-1}}
+.route-banner{position:relative;display:grid;min-height:340px;place-items:center;overflow:hidden;padding:4.5rem 0;background:linear-gradient(110deg,rgba(7,26,94,.88),rgba(7,26,94,.58)),url("flota-1.jpg") center 56%/cover no-repeat;color:#fff;text-align:center}
+.route-banner .wrap{position:relative;width:100%}
+.route-banner h2{max-width:18ch;margin:0 auto;font-size:clamp(2.2rem,5vw,3.8rem)}
+.route-banner .route-copy{margin:.8rem auto 2rem;color:rgba(255,255,255,.88);font-size:1.1rem}
+.route-stops{position:relative;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.5rem;margin:0;padding:0;list-style:none}
+.route-stops::before{position:absolute;top:.55rem;right:8.3%;left:8.3%;border-top:2px dashed rgba(255,255,255,.65);content:""}
+.route-stops li{position:relative;padding-top:1.55rem;font-weight:600}
+.route-stops li::before{position:absolute;top:0;left:50%;width:1.1rem;height:1.1rem;transform:translateX(-50%);border:3px solid #fff;border-radius:50%;background:var(--accent);content:""}
+@media(max-width:620px){.route-banner{min-height:390px;padding:3.5rem 0;background-position:48% center}.route-banner .route-copy{max-width:28ch}.route-stops{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:1.3rem}.route-stops::before{display:none}.route-stops li{font-size:.95rem}}
 </style>
 </head>
 <body class="p-inicio">
@@ -116,6 +125,16 @@ footer .nit{flex-basis:100%;text-align:center}
         <li><a href="servicios.html"><svg class="ico ico-snow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M12 2v20M4.9 6.5l14.2 11M19.1 6.5L4.9 17.5"/><path pathLength="1" d="M9 4l3 2 3-2M9 20l3-2 3 2"/></svg><b>Perecederos y refrigerada</b><span>→</span></a></li>
         <li><a href="servicios.html"><svg class="ico ico-wh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M3 21V9l9-6 9 6v12"/><path pathLength="1" d="M7 21v-8h10v8M7 17h10"/></svg><b>Despacho y distribución</b><span>→</span></a></li>
         <li><a href="servicios.html"><svg class="ico ico-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M12 21s-6-5.2-6-10a6 6 0 1112 0c0 4.8-6 10-6 10z"/><circle pathLength="1" cx="12" cy="11" r="2.2"/></svg><b>Cobertura regional y nacional</b><span>→</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="route-banner" aria-labelledby="route-title">
+    <div class="wrap">
+      <h2 id="route-title">Movemos tu carga por Colombia</h2>
+      <p class="route-copy">Desde Villavicencio, conectamos destinos con compromiso y seguridad.</p>
+      <ul class="route-stops" aria-label="Ciudades de operación">
+        <li>Villavicencio</li><li>Bogotá</li><li>Pereira</li><li>Yopal</li><li>Barranquilla</li><li>Sincelejo</li>
       </ul>
     </div>
   </section>
